@@ -65,6 +65,11 @@ def AD(evento):
     pantalla.delete(0,END)
     pantalla.insert(0,final)
     
+def punto(evento):
+    final = pantalla.get()+"."
+    pantalla.delete(0,END)
+    pantalla.insert(0,final)
+    
 def Calcular(evento):
     try:
         numeros  = []
@@ -121,7 +126,9 @@ boton_9.bind("<Button-1>",A9)
 boton_igual = Button(root, text="=", width=20, height=3, bg="red", fg="white", borderwidth=0, cursor=" hand2")
 boton_igual.grid(row=4, column=0, columnspan=2, padx=1, pady=1)
 boton_igual.bind("<Button-1>",Calcular)
-boton_punto = Button(root, text=".", width=9, height=3, bg="spring green", fg="black", cursor="hand2", borderwidth=0).grid(row=4, column=2, padx=1, pady=1)
+boton_punto = Button(root, text=".", width=9, height=3, bg="spring green", fg="black", cursor="hand2", borderwidth=0)
+boton_punto.grid(row=4, column=2, padx=1, pady=1)
+boton_punto.bind("<Button-1>",punto)
 boton_mas = Button(root, text="+", width=9, height=3, bg="deep sky blue", fg="black", borderwidth=0, cursor="hand2")
 boton_mas.grid(row=1, column=3, padx=1, pady=1)
 boton_mas.bind("<Button-1>",AS)
